@@ -1,0 +1,55 @@
+openapi: 3.0.0
+info:
+  title: Home work
+  version: 1.0.0
+  description: calculator API
+servers:
+  - url: http://localhost:3000
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+paths:
+  /calculate:
+    post:
+      summary: Perform arithmetic operation
+      description: calculate
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                number1:
+                  type: number
+                number2:
+                  type: number
+              required:
+                - number1
+                - number2
+      parameters:
+        - name: operation
+          in: header
+          required: true
+          schema:
+            type: string
+            enum: [add, subtract, multiply, divide]
+      responses:
+        '200':
+          description: calculation result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: number
+        '400':
+          description: invalid input
+        '401':
+          description: unauthorized

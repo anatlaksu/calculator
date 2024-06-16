@@ -1,0 +1,28 @@
+{
+  "name": "anat_calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/chai": "^4.3.16",
+    "body-parser": "^1.20.2",
+    "chai-http": "^5.0.0",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "supertest": "^7.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "jest": "^29.7.0",
+    "mocha": "^10.4.0"
+  }
+}
